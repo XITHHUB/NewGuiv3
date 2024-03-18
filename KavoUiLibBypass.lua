@@ -161,10 +161,10 @@ end)
 local LibName = getRandomString(5, true)..getRandomString(5, true)..getRandomString(5, true)
 
 function Kavo:ToggleUI()
-    if game.CoreGui[LibName].Enabled then
-        game.CoreGui[LibName].Enabled = false
+    if game.Players.LocalPlayer.PlayerGui[LibName].Enabled then
+        game.Players.LocalPlayer.PlayerGui[LibName].Enabled = false
     else
-        game.CoreGui[LibName].Enabled = true
+        game.Players.LocalPlayer.PlayerGui[LibName].Enabled = true
     end
 end
 
@@ -208,7 +208,7 @@ function Kavo.CreateLib(kavName, themeList)
     local selectedTab 
     kavName = kavName or "Library"
     table.insert(Kavo, kavName)
-    for i,v in pairs(game.CoreGui:GetChildren()) do
+    for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
         if v:IsA("ScreenGui") and v.Name == kavName then
             v:Destroy()
         end
@@ -243,7 +243,7 @@ function Kavo.CreateLib(kavName, themeList)
     blurFrame.Size = UDim2.new(0, 376, 0, 289)
     blurFrame.ZIndex = 999
 
-    ScreenGui.Parent = game.CoreGui
+    ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
     ScreenGui.Name = LibName
     ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     ScreenGui.ResetOnSpawn = false
