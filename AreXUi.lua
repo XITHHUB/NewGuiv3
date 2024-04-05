@@ -45,7 +45,7 @@ local UIAspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint")
 
 --Properties:
 
-Arceus.Name = "Arceus"
+Arceus.Name = "EnaZGui"
 Arceus.Enabled = true
 Arceus.ResetOnSpawn = true
 Arceus.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
